@@ -24,7 +24,6 @@ const Movie = (props) => {
   const handleClick = (event, data) => {
     event.preventDefault();
     mvContext.setFavObj(data);
-    console.log("mvContext.favObj", mvContext.favObj);
   };
 
   const loaded = () => {
@@ -51,7 +50,6 @@ const Movie = (props) => {
   const loading = () => {
     return <h2>Pick a movie in the dropdown</h2>;
   };
-console.log("movie", movie)
   return (
       movie ? loaded() : loading()
   );

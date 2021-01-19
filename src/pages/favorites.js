@@ -5,7 +5,7 @@ const Favorites = (props) => {
   const mvContext = React.useContext(MovieContext);
   const addMovie = () => {
     if (mvContext.favObj !== null) {
-        props.setFave([...props.favArr, mvContext.favObj]);
+        props.setFave(mvContext.favObj);
       }
     }
 

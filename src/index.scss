@@ -55,7 +55,7 @@ li {
 }
 
 ul {
-  padding: 0px; 
+  padding: 0px;
 }
 
 .nav {
@@ -69,26 +69,29 @@ ul {
   a {
     color: white;
     text-decoration: none;
-    margin: 10px; 
+    margin: 10px;
   }
 }
 
-.movie{
+.movie {
   cursor: pointer;
 }
 
 .poster {
-  max-width: 175px; 
+  max-width: 175px;
 }
 
 .poster-list {
-  max-width: 100px; 
+  max-width: 100px;
 }
 
 #logo {
-  width: 100px; 
+  width: 100px;
 }
 
 .card {
-  padding: 20px; 
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid rgb(100, 98, 98);
+  border-radius: 0.25rem;
 }
