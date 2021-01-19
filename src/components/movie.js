@@ -10,7 +10,7 @@ const Movie = (props) => {
   const getMovie = async () => {
     if (url !== null) {
       const response = await fetch(
-        `http://omdbapi.com/?t=${url}&apikey=${REACT_APP_BOND_MOVIES_API_KEY}`
+        `https://omdbapi.com/?t=${url}&apikey=${REACT_APP_BOND_MOVIES_API_KEY}`
       );
       const data = await response.json();
       setMovie(data);
