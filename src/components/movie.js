@@ -3,13 +3,14 @@ export const MovieContext = React.createContext(null);
 
 const Movie = (props) => {
   const url = props.movieUrl;
+  const { REACT_APP_BOND_MOVIES_API_KEY } = process.env;
   const [movie, setMovie] = React.useState(null);
   const [favObj, setFavObj] = React.useState(null);
 
   const getMovie = async () => {
     if (url !== null) {
       const response = await fetch(
-        `http://omdbapi.com/?t=${url}&apikey=c0b978f4`
+        `http://omdbapi.com/?t=${url}&apikey=${REACT_APP_BOND_MOVIES_API_KEY}`
       );
       const data = await response.json();
       setMovie(data);
@@ -50,7 +51,7 @@ const Movie = (props) => {
   const loading = () => {
     return <h2>Pick a movie in the dropdown</h2>;
   };
-
+console.log("movie", movie)
   return (
     <MovieContext.Provider value={favObj}>
       {movie ? loaded() : loading()}
