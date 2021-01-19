@@ -1,11 +1,11 @@
 import React from "react";
-export const MovieContext = React.createContext(null);
+import { MovieContext } from "../App";
 
 const Movie = (props) => {
   const url = props.movieUrl;
   const { REACT_APP_BOND_MOVIES_API_KEY } = process.env;
   const [movie, setMovie] = React.useState(null);
-  const [favObj, setFavObj] = React.useState(null);
+  const mvContext = React.useContext(MovieContext);
 
   const getMovie = async () => {
     if (url !== null) {
@@ -23,8 +23,8 @@ const Movie = (props) => {
 
   const handleClick = (event, data) => {
     event.preventDefault();
-    setFavObj(data);
-    console.log("favObj", favObj);
+    mvContext.setFavObj(data);
+    console.log("mvContext.favObj", mvContext.favObj);
   };
 
   const loaded = () => {
@@ -53,9 +53,7 @@ const Movie = (props) => {
   };
 console.log("movie", movie)
   return (
-    <MovieContext.Provider value={favObj}>
-      {movie ? loaded() : loading()}
-    </MovieContext.Provider>
+      movie ? loaded() : loading()
   );
 };
 

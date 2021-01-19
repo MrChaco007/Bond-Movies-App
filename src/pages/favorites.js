@@ -1,25 +1,22 @@
 import React from "react";
-import { MovieContext } from "../components/movie";
+import { MovieContext } from "../App";
 
 const Favorites = (props) => {
-  const [favoritesArr, setFavoritesArr] = React.useState([]);
   const mvContext = React.useContext(MovieContext);
   const addMovie = () => {
-    if (mvContext !== null) {
-      setFavoritesArr((oldArray) => [...oldArray, mvContext.favObj]);
-      console.log("mvContext", mvContext.favObj);
-      console.log("favoritesArr", favoritesArr);
+    if (mvContext.favObj !== null) {
+        props.setFave([...props.favArr, mvContext.favObj]);
+      }
     }
-  };
 
   React.useEffect(() => {
     addMovie();
-  }, [mvContext]);
+  }, [mvContext.favObj]);
 
   const loaded = () => {
     return (
       <div>
-        {favoritesArr.map((movie, index) => {
+        {props.favArr.map((movie, index) => {
           return (
             <div className="card" key={index}>
               <img className="poster" src={movie.Poster} alt={movie.Title} />
@@ -49,7 +46,7 @@ const Favorites = (props) => {
     return <h1>loading...</h1>;
   };
 
-  return <div className="favorites">{favoritesArr ? loaded() : loading()}</div>;
+  return <div className="favorites">{props.favArr ? loaded() : loading()}</div>;
 };
 
 export default Favorites;
