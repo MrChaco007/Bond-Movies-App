@@ -35,14 +35,19 @@ const Favorites = (props) => {
     }
   };
 
+  const handleSortHigh = (event) => {
+    event.preventDefault();
+    props.sortHigh(props.favArr);
+  };
+
   const loaded = () => {
     return (
       <div>
         <button onClick={myFunction} className="dropbtn">
           Sort by
         </button>
-        <div id="myDropdown" className="dropdown-content">
-          <li>Rotten Tomatoes Rating: High to Low</li>
+        <div id="myDropdown" className="dropdown-content sort">
+          <li onClick={handleSortHigh}>Rotten Tomatoes Rating: High to Low</li>
           <li>Rotten Tomatoes Rating: Low to High</li>
           <li>Release Date: Newest to Oldest</li>
           <li>Release Date: Oldest to Newest</li>
@@ -74,7 +79,7 @@ const Favorites = (props) => {
   };
 
   const loading = () => {
-    return <h1>loading...</h1>;
+    return <h1>Add a movie to favorites</h1>;
   };
 
   return <div className="favorites">{props.favArr ? loaded() : loading()}</div>;
