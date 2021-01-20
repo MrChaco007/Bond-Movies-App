@@ -21,6 +21,10 @@ return fav.Title === newFav.Title
       setFavoritesArr(newArray);
     }
   };
+  const removeFav = (selectFav) => {
+    favoritesArr.splice(favoritesArr.indexOf(selectFav), 1)
+    setFavoritesArr([...favoritesArr])
+  }
   return (
     <MovieContext.Provider value={{ favObj, setFavObj }}>
       <div className="App">
@@ -30,7 +34,7 @@ return fav.Title === newFav.Title
             <AllMovies />
           </Route>
           <Route path="/favorites">
-            <Favorites setFave={changeFav} favArr={favoritesArr} />
+            <Favorites setFave={changeFav} remFav = {removeFav} favArr={favoritesArr} />
           </Route>
         </Switch>
       </div>

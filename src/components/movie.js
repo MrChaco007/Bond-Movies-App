@@ -50,9 +50,7 @@ const Movie = (props) => {
   const loading = () => {
     return <h2>Pick a movie in the dropdown</h2>;
   };
-  return (
-      movie ? loaded() : loading()
-  );
+  return movie ? loaded() : loading();
 };
 
 export default Movie;

@@ -5,17 +5,48 @@ const Favorites = (props) => {
   const mvContext = React.useContext(MovieContext);
   const addMovie = () => {
     if (mvContext.favObj !== null) {
-        props.setFave(mvContext.favObj);
-      }
+      props.setFave(mvContext.favObj);
     }
+  };
 
   React.useEffect(() => {
     addMovie();
   }, [mvContext.favObj]);
 
+  const handleClick = (event, data) => {
+    event.preventDefault();
+    props.remFav(data);
+  };
+
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
   const loaded = () => {
     return (
       <div>
+        <button onClick={myFunction} className="dropbtn">
+          Sort by
+        </button>
+        <div id="myDropdown" className="dropdown-content">
+          <li>Rotten Tomatoes Rating: High to Low</li>
+          <li>Rotten Tomatoes Rating: Low to High</li>
+          <li>Release Date: Newest to Oldest</li>
+          <li>Release Date: Oldest to Newest</li>
+        </div>
         {props.favArr.map((movie, index) => {
           return (
             <div className="card" key={index}>
@@ -23,9 +54,9 @@ const Favorites = (props) => {
               <h3>
                 {movie.Title} ({movie.Year})
               </h3>
-              {/* <button onClick={(e) => handleClick(e, movie)}>
-           Remove from Favorites
-         </button> */}
+              <button onClick={(e) => handleClick(e, movie)}>
+                Remove from Favorites
+              </button>
               <p>
                 <b>Stars:</b> {movie.Actors}
               </p>
