@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 code {
@@ -16,25 +18,34 @@ button {
   cursor: pointer;
 }
 
+input {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 40px;
+}
+
+#data {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .dropbtn {
-  background-color: #3498db;
+  background-color: #C1984A;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: #2980b9;
+  margin-top: 20px;
+  border-radius: 0.25rem;
 }
 
 .dropdown-content {
   display: none;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: 135px;
   z-index: 1;
 }
 
@@ -46,12 +57,12 @@ button {
   border: 1px solid black;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
 .show {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px 25px; 
+
 }
 
 li {
@@ -79,14 +90,21 @@ ul {
 
 .movie {
   cursor: pointer;
+  width: 100px;
 }
 
 .poster {
-  max-width: 175px;
+  min-width: 150px;
+  width: 200px;
+  padding: 10px 30px 0px 30px;
 }
 
 .poster-list {
   max-width: 100px;
+}
+
+.data-box {
+  margin: 0px 0px 10px 0px;
 }
 
 #logo {
@@ -94,8 +112,9 @@ ul {
 }
 
 .card {
-  margin: 20px;
+  margin:20px 20px;
   padding: 5px;
+  max-width: 350px;
   border: 1px solid rgb(100, 98, 98);
   border-radius: 0.25rem;
 }

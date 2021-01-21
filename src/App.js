@@ -32,9 +32,46 @@ function App() {
     newArr.sort(
       (a, b) => parseFloat(b.Ratings[1].Value) - parseFloat(a.Ratings[1].Value)
     );
-    console.log("newArr", newArr);
     setFavoritesArr(newArr);
-    console.log("favoritesArr", favoritesArr);
+  };
+
+  const sortLow = (arr) => {
+    let newArr = [...arr];
+    newArr.sort(
+      (a, b) => parseFloat(a.Ratings[1].Value) - parseFloat(b.Ratings[1].Value)
+    );
+    setFavoritesArr(newArr);
+  };
+
+  const sortNew = (arr) => {
+    let newArr = [...arr];
+    newArr.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
+    setFavoritesArr(newArr);
+  };
+  const sortOld = (arr) => {
+    let newArr = [...arr];
+    newArr.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year));
+    setFavoritesArr(newArr);
+  };
+
+  const sortTop = (arr) => {
+    let newArr = [...arr];
+    newArr.sort(
+      (a, b) =>
+        parseFloat(b.BoxOffice.replace(/[^0-9.-]+/g, "")) -
+        parseFloat(a.BoxOffice.replace(/[^0-9.-]+/g, ""))
+    );
+    setFavoritesArr(newArr);
+  };
+
+  const sortBottom = (arr) => {
+    let newArr = [...arr];
+    newArr.sort(
+      (a, b) =>
+        parseFloat(a.BoxOffice.replace(/[^0-9.-]+/g, "")) -
+        parseFloat(b.BoxOffice.replace(/[^0-9.-]+/g, ""))
+    );
+    setFavoritesArr(newArr);
   };
 
   return (
@@ -52,6 +89,11 @@ function App() {
               favArr={favoritesArr}
               setFavArr={setFavoritesArr}
               sortHigh={sortHigh}
+              sortLow={sortLow}
+              sortNew={sortNew}
+              sortOld={sortOld}
+              sortTop={sortTop}
+              sortBottom={sortBottom}
             />
           </Route>
         </Switch>

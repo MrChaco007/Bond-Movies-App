@@ -33,16 +33,38 @@ const Movie = (props) => {
         <h3>
           {movie.Title} ({movie.Year})
         </h3>
-        <button onClick={(e) => handleClick(e, movie)}>Add to Favorites</button>
+        <input
+          type="image"
+          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611257227/Picture1_tuefwf.png"
+          onClick={(e) => handleClick(e, movie)}
+        ></input>
         <p>
-          <b>Stars:</b> {movie.Actors}
+          <b>Stars</b>
+          <br />
+          {movie.Actors}
         </p>
         <p>
-          <b>Rotten Tomatoes Critic Rating:</b> {movie.Ratings[1].Value}
+          <b>Plot</b>
+          <br /> {movie.Plot}
         </p>
-        <p>
-          <b>Box Office:</b> {movie.BoxOffice}
-        </p>
+        <div id="data">
+          <p className="data-box">
+            <img
+              className="icon"
+              src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611254964/1031px-Rottentomatoesalternativelogo.svg_nsxxf4.png"
+            />
+            <br />
+            {movie.Ratings[1].Value}
+          </p>
+          <p className="data-box">
+            <img
+              className="icon"
+              src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611256088/money-bag_wsvjur.png"
+            />
+            <br />
+            <b></b> {movie.BoxOffice}
+          </p>
+        </div>
       </div>
     );
   };

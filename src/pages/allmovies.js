@@ -176,7 +176,7 @@ const AllMovies = (props) => {
     <div className="allmovies">
       <div className="dropdown">
         <button onClick={myFunction} className="dropbtn">
-          Pick a movie
+          Pick movies
         </button>
         <div id="myDropdown" className="dropdown-content">
           {movies.map((movie, index) => {

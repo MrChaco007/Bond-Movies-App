@@ -40,6 +40,31 @@ const Favorites = (props) => {
     props.sortHigh(props.favArr);
   };
 
+    const handleSortLow = (event) => {
+      event.preventDefault();
+      props.sortLow(props.favArr);
+    };
+
+    const handleSortNew = (event) => {
+        event.preventDefault()
+        props.sortNew(props.favArr)
+    }
+
+      const handleSortOld = (event) => {
+        event.preventDefault();
+        props.sortOld(props.favArr);
+      };
+
+       const handleSortTop = (event) => {
+         event.preventDefault();
+         props.sortTop(props.favArr);
+       };
+
+        const handleSortBottom = (event) => {
+          event.preventDefault();
+          props.sortBottom(props.favArr);
+        };
+
   const loaded = () => {
     return (
       <div>
@@ -48,9 +73,11 @@ const Favorites = (props) => {
         </button>
         <div id="myDropdown" className="dropdown-content sort">
           <li onClick={handleSortHigh}>Rotten Tomatoes Rating: High to Low</li>
-          <li>Rotten Tomatoes Rating: Low to High</li>
-          <li>Release Date: Newest to Oldest</li>
-          <li>Release Date: Oldest to Newest</li>
+          <li onClick={handleSortLow}>Rotten Tomatoes Rating: Low to High</li>
+          <li onClick={handleSortNew}>Release Date: Newest to Oldest</li>
+          <li onClick={handleSortOld}>Release Date: Oldest to Newest</li>
+          <li onClick={handleSortTop}>Box Office: Highest to Lowest</li>
+          <li onClick={handleSortBottom}>Box Office: Lowest to Highest</li>
         </div>
         {props.favArr.map((movie, index) => {
           return (
@@ -64,6 +91,9 @@ const Favorites = (props) => {
               </button>
               <p>
                 <b>Stars:</b> {movie.Actors}
+              </p>
+              <p>
+                <b>Plot:</b> {movie.Plot}
               </p>
               <p>
                 <b>Rotten Tomatoes Critic Rating:</b> {movie.Ratings[1].Value}
