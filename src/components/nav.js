@@ -19,7 +19,7 @@ const Nav = (props) => {
       <Link to="/favorites">
         <img
           className="nav-logo"
-           src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611281428/heart_1_pmmu7l.png"
+          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611281428/heart_1_pmmu7l.png"
         />
       </Link>
     </div>
