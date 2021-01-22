@@ -27,7 +27,7 @@ const Favorites = (props) => {
     props.remFav(data);
   };
 
-  function myFunction() {
+  function dropdown() {
     document.getElementById("myDropdown2").classList.toggle("show2");
   }
 
@@ -93,7 +93,7 @@ const Favorites = (props) => {
   const loaded = () => {
     return (
       <div>
-        <button onClick={myFunction} className="dropbtn">
+        <button onClick={dropdown} className="dropbtn">
           Sort by
         </button>
         <div id="myDropdown2" className="dropdown-content2 sort">
