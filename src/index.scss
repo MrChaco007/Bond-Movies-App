@@ -19,7 +19,7 @@ button {
 }
 
 input {
-  width: 250px;
+  width: 260px;
   margin: 0 auto;
 }
 
@@ -33,7 +33,7 @@ input {
 }
 
 .dropbtn {
-  background-color: #C1984A;
+  background-color: #c1984a;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -54,15 +54,48 @@ input {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border: 1px solid black;
+  border: 1px solid #c1984a;
+  background-color: rgb(219, 217, 217);
 }
 
 .show {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0px 25px; 
+  margin: 0px 25px;
+}
 
+.dropbtn2 {
+  background-color: #c1984a;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 0.25rem;
+}
+
+.dropdown-content2 {
+  display: none;
+  min-width: 135px;
+  z-index: 1;
+}
+
+.dropdown-content2 li {
+  color: black;
+  font-weight: bold;
+  padding: 12px 10px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid #c1984a;
+  background-color: rgb(219, 217, 217);
+}
+
+.show2 {
+  display: block;
+  margin: 0px auto;
+  max-width: 312px;
 }
 
 li {
@@ -96,7 +129,8 @@ ul {
 .poster {
   min-width: 150px;
   width: 200px;
-  padding: 10px 30px 0px 30px;
+  margin-top: 10px;
+  box-shadow: 10px 5px 10px grey;
 }
 
 .poster-list {
@@ -109,16 +143,47 @@ ul {
 
 #logo {
   width: 100px;
+  margin: 0px 10px;
 }
 
 .card {
-  margin:20px 20px;
+  margin: 20px 20px;
   padding: 5px;
   max-width: 350px;
   border: 1px solid rgb(100, 98, 98);
   border-radius: 0.25rem;
+  background-color: rgb(219, 217, 217);
+}
+
+.card2 {
+  margin: 20px 20px;
+  padding: 5px;
+  max-width: 350px;
+  border: 1px solid rgb(100, 98, 98);
+  border-radius: 0.25rem;
+  background-color: rgb(219, 217, 217);
 }
 
 .sort {
   cursor: pointer;
+}
+
+#loading {
+  margin: 10px;
+}
+
+@media only screen and (min-width: 400px) {
+  .card {
+    margin: 20px auto;
+  }
+
+  .card2 {
+    min-width: 362px;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 }
