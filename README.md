@@ -4,8 +4,8 @@
 
 ## Project Links
 
-- [add your github repo link]()
-- [add your deployment link]()
+- [GitHub Repo](https://github.com/MrChaco007/Bond-Movies-React)
+- [Netlify Deploy](https://bondmovies.netlify.app/)
 
 ## Project Description
 
@@ -63,7 +63,7 @@ This is one example of a Bond movie pulled from the API URL: https://omdbapi.com
 - [Mobile Wireframe](https://res.cloudinary.com/dvnl2s9um/image/upload/v1610745235/Screen_Shot_2021-01-15_at_4.13.24_PM_gnasij.png)
 - [Tablet Wireframe](https://res.cloudinary.com/dvnl2s9um/image/upload/v1610746521/Wireframe_Tablet_wmvnps.png)
 - [Desktop Wireframe](https://res.cloudinary.com/dvnl2s9um/image/upload/v1610746523/Wireframe_Desktop_dh1irh.png)
-- [React Architecture](https://res.cloudinary.com/dvnl2s9um/image/upload/v1610732562/Bond_Movies_App_Architecture_5_iy7xw5.png)
+- [React Architecture](https://res.cloudinary.com/dvnl2s9um/image/upload/v1611337216/Bond_Movies_App_Architecture_6_rbteo6.png)
 
 ### MVP/PostMVP
 
@@ -94,17 +94,18 @@ This is one example of a Bond movie pulled from the API URL: https://omdbapi.com
 
 | Component        | Priority | Estimated Time | Actual Time |
 | ---------------- | :------: | :------------: | :---------: |
-| App              |    H     |      1hr       |     TBD     |
-| Nav              |    H     |      2hr       |     TBD     |
-| allmovies        |    H     |      5hrs      |     TBD     |
-| Pulling API      |    H     |      3hrs      |     TBD     |
-| Movie            |    H     |      5hrs      |     TBD     |
-| favorites        |    H     |      5hrs      |     TBD     |
-| Dropdown         |    M     |      6hrs      |     TBD     |
-| Dropdown PostMVP |    L     |      6hrs      |     TBD     |
-| Total MVP        |    H     |     27hrs      |     TBD     |
-| Total PostMVP    |    L     |      6hrs      |     TBD     |
-| Total            |    M     |     33hrs      |     TBD     |
+| App              |    H     |      1hr       |    3hrs     |
+| Nav              |    H     |      2hrs      |    2hrs     |
+| allmovies        |    H     |      5hrs      |    5hrs     |
+| Pulling API      |    H     |      3hrs      |    2hrs     |
+| Movie            |    H     |      5hrs      |    6hrs     |
+| favorites        |    H     |      5hrs      |    6hrs     |
+| Dropdown         |    M     |      6hrs      |    6hrs     |
+| Detailed styling |    L     |      7hrs      |    7hrs     |
+| Dropdown PostMVP |    L     |      6hrs      |    2hrs     |
+| Total MVP        |    H     |     34hrs      |    37hrs    |
+| Total PostMVP    |    L     |      6hrs      |    2hrs     |
+| Total            |    M     |     40hrs      |    39hrs    |
 
 ## Additional Libraries
 
@@ -112,10 +113,19 @@ Sass
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
+Below is a snippet of a function I created all on my own that shows and hides relevant fetched API data based on whether or not the header text is clicked. It is important to mention that I am employing useState and useEffect to make these functions and their umbrella component work properly.
 
 ```
-function reverse(string) {
-	// here is code to reverse a string of text
-}
+const handleShow = (event) => {
+    if (showToggle === false) {
+      setShowToggle(true);
+    } else {
+      setShowToggle(false);
+    }
+  };
+<b className="title" onClick={handleShow}>
+    Stars▼
+</b>
+<br />
+{showToggle ? movie.Actors : null}
 ```
