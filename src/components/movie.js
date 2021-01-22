@@ -2,12 +2,12 @@ import React from "react";
 import { MovieContext } from "../App";
 
 const Movie = (props) => {
-  const url = props.movieUrl;
   const { REACT_APP_BOND_MOVIES_API_KEY } = process.env;
   const [movie, setMovie] = React.useState(null);
   const [showToggle, setShowToggle] = React.useState(true);
   const [showToggle2, setShowToggle2] = React.useState(true);
   const mvContext = React.useContext(MovieContext);
+  const url = props.movieUrl;
 
   const getMovie = async () => {
     if (url !== null) {

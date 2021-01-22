@@ -20,8 +20,7 @@ button {
 
 input {
   width: 260px;
-  margin: 5px auto;
-  padding: 5px 5px;
+  margin: 0px auto 15px auto;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
@@ -29,7 +28,7 @@ input {
   color: #fff;
   background-color: #000000;
   border: none;
-  border-radius: 15px;
+  border-radius: 0.5rem;
   box-shadow: 0 9px #999;
   }
 
@@ -56,7 +55,7 @@ input {
   border: none;
   cursor: pointer;
   margin-top: 20px;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .dropdown-content {
@@ -160,6 +159,7 @@ ul {
 
 .data-box {
   margin: 0px 0px 10px 0px;
+  width: 92.06px;
 }
 
 #logo {
