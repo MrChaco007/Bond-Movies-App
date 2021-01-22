@@ -114,12 +114,16 @@ const Favorites = (props) => {
                 </h3>
 
                 <p className="info-box">
-                  <b onClick={handleShow}>Stars▼</b>
+                  <b className="title" onClick={handleShow}>
+                    Stars▼
+                  </b>
                   <br />
                   {showToggle ? movie.Actors : null}
                 </p>
                 <p className="info-box">
-                  <b onClick={handleShow2}>Plot▼</b>
+                  <b className="title" onClick={handleShow2}>
+                    Plot▼
+                  </b>
                   <br /> {showToggle2 ? movie.Plot : null}
                 </p>
                 <div id="data">

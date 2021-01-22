@@ -62,12 +62,16 @@ const Movie = (props) => {
           {movie.Title} ({movie.Year})
         </h3>
         <p>
-          <b onClick={handleShow2}>Stars ▼</b>
+          <b className="title" onClick={handleShow2}>
+            Stars ▼
+          </b>
           <br />
           {showToggle2 ? show2() : null}
         </p>
         <p>
-          <b onClick={handleShow}>Plot ▼</b>
+          <b className="title" onClick={handleShow}>
+            Plot ▼
+          </b>
           <br /> {showToggle ? show() : null}
         </p>
         <div id="data">
