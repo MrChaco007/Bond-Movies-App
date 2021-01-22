@@ -5,7 +5,10 @@ const Nav = (props) => {
   return (
     <div className="nav">
       <Link to="/">
-        <img src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611271666/stacked-papers_1_agx9jp.png" />
+        <img
+          className="nav-logo"
+          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611281432/stacked-papers_2_rvibxe.png"
+        />
       </Link>
       <div>
         <img
@@ -14,7 +17,10 @@ const Nav = (props) => {
         />
       </div>
       <Link to="/favorites">
-        <img src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611271720/heart_scsxc4.png" />
+        <img
+          className="nav-logo"
+           src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611281428/heart_1_pmmu7l.png"
+        />
       </Link>
     </div>
   );

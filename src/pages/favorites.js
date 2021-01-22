@@ -142,7 +142,7 @@ const Favorites = (props) => {
                 </div>
                 <input
                   type="image"
-                  src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611279032/Picture2_pgbqys.png"
+                  src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1611281318/Picture2_zncxdl.png"
                   onClick={(e) => handleClick(e, movie)}
                 ></input>
               </div>
